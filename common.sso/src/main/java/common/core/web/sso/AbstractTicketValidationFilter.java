@@ -121,6 +121,7 @@ public class AbstractTicketValidationFilter extends AbstractCasFilter {
 		return true;
 	}
 
+
 	/**
 	 * Template method that gets executed if ticket validation succeeds.
 	 * Override if you want additional behavior to occur if ticket validation
