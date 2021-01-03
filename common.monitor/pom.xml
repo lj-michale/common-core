@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>common.core</groupId>
+		<artifactId>common-parent</artifactId>
+		<version>common-core-20190730</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>common-monitor</artifactId>
+	
+	<name>common-monitor</name>
+	<description>common-monitor</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.targetJDK>1.8</project.build.targetJDK>
+
+		<plugin.checkstyle.version>2.9.1</plugin.checkstyle.version>
+		<plugin.pmd.version>2.7.1</plugin.pmd.version>
+		<plugin.findbugs.version>3.0.1</plugin.findbugs.version>
+		<plugin.jacoco.version>0.6.2.201302030002</plugin.jacoco.version>
+
+	</properties>
+
+	<dependencies>
+		
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<source>${project.build.targetJDK}</source>
+					<target>${project.build.targetJDK}</target>
+					<testSource>${project.build.targetJDK}</testSource>
+					<testTarget>${project.build.targetJDK}</testTarget>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,2 @@
+eaconsumer=common.core.dubbo.filter.EaConsumerFilter
+eaprovider=common.core.dubbo.filter.EaProviderFilter
